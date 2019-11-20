@@ -1,7 +1,7 @@
 #!/bin/bash
 
 gif_folder=/home/pi/autoplay/jpg
-movie_folder=/home/pi/autoplay/mp4
+media_folder=/home/pi/autoplay/mp4
 
 ##---------------No edit after this line---------------##
 
@@ -20,14 +20,14 @@ for f in `ls $gif_folder/*.gif`; do
     -movflags +faststart \
     -pix_fmt yuv420p \
     -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
-    $movie_folder/$(basename $f).mp4
+    $media_folder/$(basename $f).mp4
   mv $f $gif_folder/backup/$(basename $jpg_file)
 done
 
 #Start the slide show
 clear
 while true; do
-  for f in `ls -v $movie_folder/*.*`; do
+  for f in `ls -v $media_folder/*.*`; do
     ext="${f##*.}"
     case "$ext" in
       jpg|png)
