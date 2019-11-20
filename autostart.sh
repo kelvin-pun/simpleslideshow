@@ -21,7 +21,7 @@ for f in `ls $gif_folder/*.gif`; do
     -pix_fmt yuv420p \
     -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
     $media_folder/$(basename $f).mp4
-  mv $f $gif_folder/backup/$(basename $jpg_file)
+  mv $f $gif_folder/backup/$(basename $f)
 done
 
 #Start the slide show
