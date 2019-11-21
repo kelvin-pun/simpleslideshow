@@ -30,7 +30,7 @@ while true; do
   for f in `ls -v $media_folder/*.*`; do
     ext="${f##*.}"
     case "$ext" in
-      jpg|png)
+      jpg|jpeg|png)
         /usr/bin/fbi -a -1 -t 10 --noverbose "$f" > /dev/null 2>&1
         ;;
       mp4|avi|mov)
