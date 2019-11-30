@@ -27,7 +27,7 @@ done
 #Start the slide show
 clear
 while true; do
-  for f in `ls -v $media_folder/*.*`; do
+  for f in `ls -v -1 $media_folder/*.*`; do
     ext="${f##*.}"
     case "$ext" in
       jpg|jpeg|png)
